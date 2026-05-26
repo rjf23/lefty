@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lefty
 
-## Getting Started
+An AI-powered interactive portfolio — a conversational way to explore the work, thinking, and background of Ryan Flynn.
 
-First, run the development server:
+## What this is
+
+Most portfolios are static. You scroll, you read, you leave. Lefty is different: it's an interactive surface you can talk to. Instead of reading a résumé, you ask questions and get answers grounded in real context.
+
+It's also a working demonstration of the architecture it's built on — agents, sessions, retrieval, and generative UI — assembled deliberately from specialized, composable tools rather than an all-in-one platform. The goal was to understand how each layer connects, not to hide the connections behind a framework.
+
+## Status
+
+Active development. This is v1 — the foundation. The interactive chat, persistent sessions, and public deployment are being built in stages, in public.
+
+## Tech stack
+
+The stack was chosen to keep each layer specialized and understood, rather than bundled:
+
+- **Next.js 15** — application framework (App Router)
+- **TypeScript** — type safety across the codebase
+- **Tailwind CSS** — styling
+- **Vercel** — hosting and continuous deployment
+- **Neon** — Postgres database (chosen over bundled platforms to keep data concerns explicit)
+- **Upstash** — Redis for caching and session state
+- **Anthropic Claude** — the language model behind the conversation
+- **Tavily** — web search for current context
+
+## Getting started
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/rjf23/lefty.git
+cd lefty
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **v1** — Interactive portfolio: chat interface, grounded knowledge, public URL
+- **v2** — Personalization: visitor recognition, adaptive responses
+- **v3** — A closed-loop system connecting journaling, résumé, and outreach
+- **Beyond** — Platform exploration
 
-## Learn More
+## About
 
-To learn more about Next.js, take a look at the following resources:
+Lefty is built by Ryan Flynn, a product leader exploring the intersection of product thinking and hands-on engineering.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built in public — follow along.
